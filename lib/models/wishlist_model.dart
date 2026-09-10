@@ -15,9 +15,7 @@ class WishlistItemModel {
     required this.price,
   });
 
-  factory WishlistItemModel.fromJson(
-    Map<String, dynamic> json,
-  ) {
+  factory WishlistItemModel.fromJson(Map<String, dynamic> json) {
     final product = json['product'] is Map
         ? Map<String, dynamic>.from(json['product'])
         : <String, dynamic>{};
@@ -26,22 +24,20 @@ class WishlistItemModel {
         ? Map<String, dynamic>.from(product['pricing'])
         : <String, dynamic>{};
 
-    final priceValue = json['price'] ??
+    final priceValue =
+        json['price'] ??
         product['price'] ??
         pricing['sellingPrice'] ??
         pricing['effectivePrice'];
 
     return WishlistItemModel(
       id: json['id']?.toString() ?? '',
-      productId: json['productId']?.toString() ??
-          product['id']?.toString() ??
-          '',
+      productId:
+          json['productId']?.toString() ?? product['id']?.toString() ?? '',
       storeId: json['storeId']?.toString(),
-      name: json['name']?.toString() ??
-          product['name']?.toString() ??
-          'Product',
-      imageUrl: json['imageUrl']?.toString() ??
-          product['imageUrl']?.toString(),
+      name:
+          json['name']?.toString() ?? product['name']?.toString() ?? 'Product',
+      imageUrl: json['imageUrl']?.toString() ?? product['imageUrl']?.toString(),
       price: _toDouble(priceValue),
     );
   }
@@ -51,9 +47,6 @@ class WishlistItemModel {
       return value.toDouble();
     }
 
-    return double.tryParse(
-          value?.toString() ?? '',
-        ) ??
-        0.0;
+    return double.tryParse(value?.toString() ?? '') ?? 0.0;
   }
 }

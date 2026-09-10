@@ -10,15 +10,9 @@ class TokenStorage {
   }) async {
     final prefs = await SharedPreferences.getInstance();
 
-    await prefs.setString(
-      _accessTokenKey,
-      accessToken,
-    );
+    await prefs.setString(_accessTokenKey, accessToken);
 
-    await prefs.setString(
-      _refreshTokenKey,
-      refreshToken,
-    );
+    await prefs.setString(_refreshTokenKey, refreshToken);
   }
 
   Future<String?> getAccessToken() async {

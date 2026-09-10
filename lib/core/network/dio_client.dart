@@ -9,9 +9,7 @@ class DioClient {
         baseUrl: 'https://outmesmart.codeedextechnologies.com',
         connectTimeout: const Duration(seconds: 30),
         receiveTimeout: const Duration(seconds: 30),
-        headers: {
-          'Accept': 'application/json',
-        },
+        headers: {'Accept': 'application/json'},
       ),
     );
 

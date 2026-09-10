@@ -105,9 +105,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 const SizedBox(height: 28),
 
-                // =========================
-                // CATEGORIES
-                // =========================
 
                 const Text(
                   'Categories',
@@ -199,9 +196,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 const SizedBox(height: 30),
 
-                // =========================
-                // NEARBY STORES
-                // =========================
 
                 const Text(
                   'Nearby Stores',
@@ -312,9 +306,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 const SizedBox(height: 30),
 
-                // =========================
-                // TRENDING PRODUCTS
-                // =========================
 
                 const Text(
                   'Trending Now',
